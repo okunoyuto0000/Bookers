@@ -1,14 +1,35 @@
 <h1>Books</h1>
-  <p>タイトル</p>
-<div><% @books.each do |book| %>
-  <span><%= book.title %></span>
-  <span><%= book.body %></span>
-  <%= link_to "Show", book_path(book.id), class: "link" %>
-  <%= link_to "Edit", edit_book_path(book.id), class: "link" %>
-  <%= link_to "Destroy", destroy_book_path(book.id), method: :delete, "data-confirm" => "Are you sure?", class: "link" %>
+
+<div class="title-block">
+  <div class="title">Title</div>
+  <% @books.each do |book| %>
+  <div class="text">
+    <%= book.title %>
+  </div>
+  <% end %>
 </div>
 
-<% end %>
+<div class="body-block">
+  <div class="body">Body</div>
+  <% @books.each do |book| %>
+  <div class="text">
+    <%= book.body %>
+  </div>
+  <% end %>
+</div>
+
+<div class="link-block">
+  <div class="link-blank"></div>
+  <% @books.each do |book| %>
+  <div class="text">
+   <%= link_to "Show", book_path(book.id), class: "link" %>
+   <%= link_to "Edit", edit_book_path(book.id), class: "link" %>
+   <%= link_to "Destroy", destroy_book_path(book.id), method: :delete, "data-confirm" => "Are you sure?", class: "link" %>
+  </div>
+  <% end %>
+</div>
+
+
 
 <h2>New book</h2>
 
