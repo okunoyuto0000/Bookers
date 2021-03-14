@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root to: 'homes#index'
   get 'books/new'
   post 'books' => 'books#create'
+  get 'books/:id' => 'books#show', as: 'book'
 end
