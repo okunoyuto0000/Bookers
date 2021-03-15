@@ -81,3 +81,7 @@ h2{
 .editing{
     padding-bottom: 17px
 }
+
+.success{
+    color: #008000;
+}
