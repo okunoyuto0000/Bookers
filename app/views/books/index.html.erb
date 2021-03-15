@@ -1,33 +1,26 @@
 <h1>Books</h1>
 
-<div class="title-block">
-  <div class="title">Title</div>
-  <% @books.each do |book| %>
-  <div class="text">
-    <%= book.title %>
-  </div>
-  <% end %>
-</div>
+<table>
+　<tr>
+　　<th>Title</th>
+　　<th>Body</th>
+　　<th></th>
+　</tr>
 
-<div class="body-block">
-  <div class="body">Body</div>
-  <% @books.each do |book| %>
-  <div class="text">
-    <%= book.body %>
-  </div>
-  <% end %>
-</div>
+  <% @books.each do |book| %><tr>
+　　<td><%= book.title %></td>
+　　<td><%= book.body %></td>
+　　<td>
+　　   <%= link_to "Show", book_path(book.id), class: "link" %>
+       <%= link_to "Edit", edit_book_path(book.id), class: "link" %>
+       <%= link_to "Destroy", destroy_book_path(book.id), method: :delete, "data-confirm" => "Are you sure?", class: "link" %>
+　　</td>
+　　</tr>　<% end %>
 
-<div class="link-block">
-  <div class="link-blank"></div>
-  <% @books.each do |book| %>
-  <div class="text">
-   <%= link_to "Show", book_path(book.id), class: "link" %>
-   <%= link_to "Edit", edit_book_path(book.id), class: "link" %>
-   <%= link_to "Destroy", destroy_book_path(book.id), method: :delete, "data-confirm" => "Are you sure?", class: "link" %>
-  </div>
-  <% end %>
-</div>
+　</table>
+
+
+
 
 <h2>New book</h2>
 
@@ -50,4 +43,3 @@
   <%= f.text_area :body, class: "input" %>
   <div><%= f.submit ' Create Book ' %></div>
 <% end %>
-
