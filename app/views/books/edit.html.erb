@@ -1,4 +1,18 @@
 <h1 class="editing">Editing Book</h1>
+
+<% if @book.errors.any? %>
+    <div id="error_explanation">
+      <h2 class="error"><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul class="message">
+        <% @book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
+
 <%= form_with model:@book, url:"/books/#{@book.id}", local:true do |f| %>
 
   <div class="label">Title</div>

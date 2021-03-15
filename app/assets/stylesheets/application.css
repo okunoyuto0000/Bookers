@@ -85,3 +85,22 @@ h2{
 .success{
     color: #008000;
 }
+
+#error_explanation{
+    border:2px solid red;
+    margin-bottom: 10px;
+}
+
+.error{
+    font-size: 12px;
+    padding: 5px 10px;
+    margin: 0px;
+    color: white;
+    background-color: #cc0000;
+}
+
+.message{
+    font-size: 12px;
+    padding: 30px 60px;
+    background-color: #f0f0f0;
+}
